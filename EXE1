@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class BateriaDeExerciciosJava {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println ("A Seguir, insira 2 valores inteiros para serem somados:");
+        System.out.print("Primeiro valor: ");
+        int nota1 = scanner.nextInt();
+        System.out.println (nota1+ " + ? = ?");
+        System.out.print("Segundo valor: ");
+        int nota2 = scanner.nextInt();        
+        int result = nota1 + nota2;
+        System.out.println (nota1+ " + "+nota2+" = " + result);
+        System.out.println ("Soma de "+nota1+ " com "+nota2+" = " + result);
+    }
+    
+}
