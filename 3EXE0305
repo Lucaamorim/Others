@@ -25,10 +25,10 @@ public class BateriaDeExerciciosJava {
         if (nota1 <0){
         
             if(nota2>0){
-            System.out.println("Dados de Entrada são Inválidos");
+            JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");
             } else if (nota2<0){
             System.out.println (nota1+ " + "+nota2+" = " + result);
-            System.out.println ("Soma de "+nota1+ " com "+nota2+" = " + result);
+            JOptionPane.showMessageDialog(null,"Soma de "+nota1+ " com "+nota2+" = " + result);
             
            }   
         }
@@ -36,10 +36,10 @@ public class BateriaDeExerciciosJava {
         if (nota1 >0){
         
             if(nota2<0){
-            System.out.println("Dados de Entrada são Inválidos");
+            JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");
             } else if (nota2>0){
             System.out.println (nota1+ " + "+nota2+" = " + result);
-            System.out.println ("Soma de "+nota1+ " com "+nota2+" = " + result);
+            JOptionPane.showMessageDialog(null,"Soma de "+nota1+ " com "+nota2+" = " + result);
             
            }   
         }
