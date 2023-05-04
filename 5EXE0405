@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class Others {
+
+    
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner (System.in);
+        
+        
+        System.out.print ("Nome completo do Lutador: ");
+        String nome = scanner.nextLine();
+        System.out.print ("Peso do Lutador: ");
+        double peso = scanner.nextDouble();
+        String categoria = "";
+        
+        if (peso < 65.0){
+        categoria = "Pena";
+        }else if (peso >= 65.0 && peso < 72.0){
+        categoria = "Leve";
+        }else if (peso >= 72.0 && peso <79.0 ){
+        categoria = "Ligeiro";
+        }else if (peso >= 79.0 && peso < 86.0){
+        categoria = "Meio Médio";
+        }else if (peso >= 86.0 && peso < 93.0){
+        categoria = "Médio";
+        }else if (peso >= 93.0 && peso < 100.0){
+        categoria = "Meio pesado";
+        }else if (peso >= 100.0){
+        categoria = "Pesado";
+        }
+        
+        
+        // Gravar Arquivo:
+        FileWriter arqv = new FileWriter("C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\FichaLutador"+nome+".txt");
+        PrintWriter gravarArqv = new PrintWriter(arqv);
+        
+        gravarArqv.printf("Nome do Lutador: " + nome + "%n");
+        gravarArqv.printf("Peso: " + peso + "kg %n");
+        gravarArqv.printf("Categoria: " + categoria+ "%n");
+        gravarArqv.printf( "O lutador "+ nome + " pesa " + peso + "kg e se enquadra na categoria "+ categoria);
+        
+        arqv.close();
+        
+    }
+}
