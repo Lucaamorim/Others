@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Others {
+
+    @SuppressWarnings("empty-statement")
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        double a,b,c,n1,n2,n3;
+        
+        System.out.println ("Insira 3 numeros reais que formam um triangulo que classificaremos ele :D !!");
+        System.out.println ("Numero 1");
+        a = scanner.nextDouble();
+        System.out.println ("Numero 2");
+        b = scanner.nextDouble();
+        System.out.println ("Numero 3");
+        c = scanner.nextDouble();
+        
+        if (a <= 0 || b <= 0 || c <= 0){
+            System.out.println ("Numero negativo ou zerados nao permitido");
+            System.exit(0);
+        } 
+        //ordenando os numero em ordem crescente!
+        
+        
+        if (a<b && b<c){   
+        n1=a; n2=b; n3=c;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);       
+        } else if (a<c && c<b){
+        n1=a; n2=c; n3=b;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);
+        } else if (c < a && a < b ) {
+        n1=c; n2=a; n3=b;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);
+        
+        } else if (b < a && a < c ){
+        n1=b; n2=a; n3=c;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);
+        } else if (b < c && c < a ){
+        n1=b; n2=c; n3=a;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);
+        } else {
+        n1=c; n2=b; n3=a;
+        verificarSeEtriangulo(n1,n2,n3);
+        classificarTriangulo(n1,n2,n3);
+        }
+    }
+    
+    static void verificarSeEtriangulo(double m, double n, double o)  {
+        double r = m+n;
+        if (r<o){
+        System.out.println ("Dados para formar um triangulo Inválido!");
+        } else if (r>0){
+        System.out.println ("Teste do Triangulo : Positivo!");
+        } else {
+         System.out.println ("Dados para formar um triangulo Inválido!");
+        }
+        
+};
+    
+    static void classificarTriangulo (double a, double e, double i){
+    if (a == e && e == i){
+    System.out.println ("Seu trinagulo é equilátero!");
+    } else if (a == e && e != i || i == a && a != e || e == i && i != a ){
+    System.out.println ("Seu trinagulo é isósceles!");
+    } else if (a != e && e != i && i != a){
+    System.out.println ("Seu trinagulo é escaleno!");
+    }
+    };
+    
+    
+    
+}
