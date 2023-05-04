@@ -22,24 +22,24 @@ public class Others {
         //ordenando os numero em ordem crescente!
         
         
-        if (a<b && b<c){   
+        if (a<=b && b<=c){   
         n1=a; n2=b; n3=c;
         verificarSeEtriangulo(n1,n2,n3);
         classificarTriangulo(n1,n2,n3);       
-        } else if (a<c && c<b){
+        } else if (a<=c && c<=b){
         n1=a; n2=c; n3=b;
         verificarSeEtriangulo(n1,n2,n3);
         classificarTriangulo(n1,n2,n3);
-        } else if (c < a && a < b ) {
+        } else if (c <= a && a <= b ) {
         n1=c; n2=a; n3=b;
         verificarSeEtriangulo(n1,n2,n3);
         classificarTriangulo(n1,n2,n3);
         
-        } else if (b < a && a < c ){
+        } else if (b <= a && a <= c ){
         n1=b; n2=a; n3=c;
         verificarSeEtriangulo(n1,n2,n3);
         classificarTriangulo(n1,n2,n3);
-        } else if (b < c && c < a ){
+        } else if (b <= c && c <= a ){
         n1=b; n2=c; n3=a;
         verificarSeEtriangulo(n1,n2,n3);
         classificarTriangulo(n1,n2,n3);
@@ -54,10 +54,12 @@ public class Others {
         double r = m+n;
         if (r<o){
         System.out.println ("Dados para formar um triangulo Inválido!");
-        } else if (r>0){
+        System.exit(0);
+        } else if (r>o){
         System.out.println ("Teste do Triangulo : Positivo!");
         } else {
          System.out.println ("Dados para formar um triangulo Inválido!");
+         System.exit(0);
         }
         
 };
