@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.io.IOException;
+
+
+public class Others {
+
+    
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner (System.in);
+        int x;
+        System.out.println("Seu numero é negativo ou positivo ? caso queria sair da brincadeira apenas digite '0' <3");
+        do {
+            System.out.print("Numero:");
+        x = scanner.nextInt();
+        if (x < 0){
+        System.out.println("Numero negativo :D");
+        } else if (x > 0) {
+        System.out.println("Numero positivo :D");
+        } else {
+            System.out.println("Você digitou 0 >:(  ");
+        }
+
+        }while(x != 0);
+        System.out.print("Acabou a Brincadeira!");
+        System.exit(0);
+    }
+}
