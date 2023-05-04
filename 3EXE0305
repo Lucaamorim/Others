@@ -1,48 +1,53 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.DataInputStream;
+import javax.swing.JOptionPane;
 
 
 
 public class BateriaDeExerciciosJava {
 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         int nota1;
         int nota2;
         int result;
+        String input;
+        
+        DataInputStream dado;
         
         
-        Scanner scanner = new Scanner(System.in);
-        System.out.println ("A Seguir, insira 2 valores inteiros para serem somados:");
+        JOptionPane.showMessageDialog(null,"A Seguir, insira 2 valores inteiros para serem somados:");
        
        
-        System.out.print("Primeiro valor: ");
-        nota1 = scanner.nextInt();   
-        System.out.print("Segundo valor: ");
-        nota2 = scanner.nextInt(); 
+        input = JOptionPane.showInputDialog("Primeiro valor: ");
+        nota1 = Integer.parseInt(input);
+        
+        dado = new DataInputStream(System.in);
+        
+        input = JOptionPane.showInputDialog("Segundo valor: ");
+        nota2 = Integer.parseInt(input); 
+        
         result = nota1 + nota2;
         
-        if (nota1 <0){
         
-            if(nota2>0){
-            JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");
-            } else if (nota2<0){
-            System.out.println (nota1+ " + "+nota2+" = " + result);
+        
+        if (nota1 < 0){       
+            if(nota2>0){                      
+           JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");
+            } else if (nota2<0){                              
+            JOptionPane.showMessageDialog(null,"Soma de "+nota1+ " com "+nota2+" = " + result);          
+           }   
+        }        
+        if (nota1 >0){       
+            if(nota2<0){      
+            JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");           
+            } else if (nota2>0){    
             JOptionPane.showMessageDialog(null,"Soma de "+nota1+ " com "+nota2+" = " + result);
             
            }   
         }
         
-        if (nota1 >0){
-        
-            if(nota2<0){
-            JOptionPane.showMessageDialog(null,"Dados de Entrada são Inválidos");
-            } else if (nota2>0){
-            System.out.println (nota1+ " + "+nota2+" = " + result);
-            JOptionPane.showMessageDialog(null,"Soma de "+nota1+ " com "+nota2+" = " + result);
-            
-           }   
-        }
- 
+           
     }
 }
